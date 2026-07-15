@@ -45,91 +45,29 @@ a {
 }
 
 .landing {
-  --dj-x: 0px;
-  --dj-y: 0px;
-  --dj-rotate: 0deg;
-  --logo-x: 0px;
-  --logo-y: 0px;
-  --logo-scale: 1;
-  --tagline-x: 0px;
-  --tagline-y: 0px;
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
   width: min(100%, 430px);
   margin: 0 auto;
   background: var(--ink);
 }
 
 .design {
-  position: relative;
-  z-index: 1;
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 11377.08 / 32808.32;
   user-select: none;
   -webkit-user-drag: none;
-}
-
-.motion-layer {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  overflow: hidden;
-  background: var(--ink);
-  pointer-events: none;
-  contain: paint;
-}
-
-.motion-layer--dj {
-  clip-path: inset(8.7% 18% 67.5% 4%);
-}
-
-.motion-layer--logo {
-  z-index: 3;
-  clip-path: inset(0 0 88.5% 0);
-}
-
-.motion-layer--tagline {
-  z-index: 4;
-  clip-path: inset(11.2% 3% 84.6% 30%);
-}
-
-.motion-art {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 11377.08 / 32808.32;
-  user-select: none;
-  will-change: transform;
-  -webkit-user-drag: none;
-}
-
-.motion-layer--dj .motion-art {
-  transform: translate3d(var(--dj-x), var(--dj-y), 0) rotate(var(--dj-rotate));
-  transform-origin: 48% 20%;
-}
-
-.motion-layer--logo .motion-art {
-  transform: translate3d(var(--logo-x), var(--logo-y), 0) scale(var(--logo-scale));
-  transform-origin: 50% 6%;
-}
-
-.motion-layer--tagline .motion-art {
-  transform: translate3d(var(--tagline-x), var(--tagline-y), 0);
 }
 
 .hotspots {
   position: absolute;
-  z-index: 20;
   inset: 0;
 }
 
 .hotspot {
   position: absolute;
   display: block;
-  overflow: hidden;
   margin: 0;
   padding: 0;
   border: 0;
@@ -138,42 +76,6 @@ a {
   color: transparent;
   cursor: pointer;
   touch-action: manipulation;
-}
-
-.hotspot::before,
-.hotspot::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  pointer-events: none;
-  opacity: 0;
-}
-
-.hotspot::before {
-  border: 2px solid rgba(120, 190, 32, 0.9);
-  background: rgba(120, 190, 32, 0.12);
-  box-shadow:
-    inset 0 0 0 2px rgba(0, 0, 0, 0.28),
-    0 0 18px rgba(120, 190, 32, 0.35);
-  transform: scale(0.975);
-}
-
-.hotspot::after {
-  background: radial-gradient(
-    circle at var(--tap-x, 50%) var(--tap-y, 50%),
-    rgba(255, 255, 255, 0.34) 0,
-    rgba(120, 190, 32, 0.2) 13%,
-    transparent 38%
-  );
-  transform: scale(0.55);
-}
-
-.hotspot.is-pressed::before {
-  animation: touch-frame 360ms ease-out both;
-}
-
-.hotspot.is-pressed::after {
-  animation: touch-ripple 420ms ease-out both;
 }
 
 .hotspot--menu {
@@ -225,35 +127,6 @@ a {
 
 .hotspot:not([aria-disabled="true"]):active {
   background: rgba(255, 255, 255, 0.04);
-}
-
-@keyframes touch-frame {
-  0% {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  22% {
-    opacity: 1;
-    transform: scale(0.985);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1);
-  }
-}
-
-@keyframes touch-ripple {
-  0% {
-    opacity: 0;
-    transform: scale(0.45);
-  }
-  18% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.35);
-  }
 }
 
 .menu-dialog {
@@ -315,17 +188,6 @@ a {
   text-decoration: none;
   cursor: pointer;
   touch-action: manipulation;
-  transition:
-    transform 120ms ease,
-    background-color 120ms ease,
-    color 120ms ease;
-}
-
-.menu-pdf-link:active,
-.menu-close:active {
-  transform: scale(0.9);
-  background: var(--green);
-  color: var(--black);
 }
 
 .menu-close {
@@ -362,20 +224,4 @@ a {
 .noscript-menu a {
   color: var(--black);
   font-weight: 800;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .motion-layer {
-    display: none;
-  }
-
-  .hotspot.is-pressed::before,
-  .hotspot.is-pressed::after {
-    animation: none;
-  }
-
-  .menu-pdf-link,
-  .menu-close {
-    transition: none;
-  }
 }
