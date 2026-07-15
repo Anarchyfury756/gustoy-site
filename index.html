@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="ГУСТОЙ — меню, система лояльности, отзывы и Telegram-группа."
+    />
+    <title>ГУСТОЙ</title>
+    <link rel="preload" as="image" type="image/svg+xml" href="assets/gustoy-home.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="landing" aria-labelledby="brand-title">
+      <h1 class="visually-hidden" id="brand-title">ГУСТОЙ</h1>
+      <img
+        class="design"
+        src="assets/gustoy-home.svg"
+        width="9906"
+        height="21438"
+        alt=""
+        decoding="async"
+      />
+
+      <nav class="hotspots" aria-label="Основные ссылки">
+        <button
+          class="hotspot hotspot--menu"
+          id="menu-open"
+          type="button"
+          aria-haspopup="dialog"
+          aria-label="Открыть меню"
+        >
+          <span class="visually-hidden">Меню</span>
+        </button>
+
+        <a
+          class="hotspot hotspot--loyalty"
+          href="https://iiko.cards/L/068856"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Открыть систему лояльности"
+        >
+          <span class="visually-hidden">Система лояльности</span>
+        </a>
+
+        <a
+          class="hotspot hotspot--2gis"
+          href="https://2gis.ru/irkutsk/search/%D0%B3%D1%83%D1%81%D1%82%D0%BE%D0%B9/firm/70000001027295493/104.291367%2C52.284741?m=104.280722%2C52.28809%2F10.49"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Оставить отзыв в 2ГИС"
+        >
+          <span class="visually-hidden">Отзыв 2ГИС</span>
+        </a>
+
+        <a
+          class="hotspot hotspot--yandex"
+          href="https://yandex.ru/search?text=%D0%93%D1%83%D1%81%D1%82%D0%BE%D0%B9&oid=b%3A165048607455&lr=63"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Оставить отзыв на Яндексе"
+        >
+          <span class="visually-hidden">Отзыв Яндекс</span>
+        </a>
+
+        <a
+          class="hotspot hotspot--telegram"
+          href="https://t.me/+7MPlepUNmtYxYmI6"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Открыть Telegram-группу"
+        >
+          <span class="visually-hidden">Группа ТГ</span>
+        </a>
+      </nav>
+    </main>
+
+    <dialog class="menu-dialog" id="menu-dialog" aria-labelledby="menu-title">
+      <div class="menu-toolbar">
+        <h2 id="menu-title">Меню</h2>
+        <div class="menu-toolbar__actions">
+          <a
+            class="menu-pdf-link"
+            href="assets/menu/gustoy-menu.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PDF
+          </a>
+          <button class="menu-close" id="menu-close" type="button" aria-label="Закрыть меню">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-pages">
+        <img src="assets/menu/page-1.png" alt="Меню ГУСТОЙ, страница 1: кальян и правила" />
+        <img loading="lazy" src="assets/menu/page-2.png" alt="Меню ГУСТОЙ, страница 2: традиционный китайский чай" />
+        <img loading="lazy" src="assets/menu/page-3.png" alt="Меню ГУСТОЙ, страница 3: традиционный китайский чай" />
+        <img loading="lazy" src="assets/menu/page-4.png" alt="Меню ГУСТОЙ, страница 4: ароматизированный чай" />
+        <img loading="lazy" src="assets/menu/page-5.png" alt="Меню ГУСТОЙ, страница 5: напитки и закуски" />
+      </div>
+    </dialog>
+
+    <noscript>
+      <p class="noscript-menu">
+        <a href="assets/menu/gustoy-menu.pdf">Открыть меню в PDF</a>
+      </p>
+    </noscript>
+
+    <script src="script.js"></script>
+  </body>
+</html>
