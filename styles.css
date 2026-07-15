@@ -45,13 +45,25 @@ a {
 }
 
 .landing {
+  --dj-x: 0px;
+  --dj-y: 0px;
+  --dj-rotate: 0deg;
+  --logo-x: 0px;
+  --logo-y: 0px;
+  --logo-scale: 1;
+  --tagline-x: 0px;
+  --tagline-y: 0px;
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   width: min(100%, 430px);
   margin: 0 auto;
   background: var(--ink);
 }
 
 .design {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: auto;
@@ -60,8 +72,68 @@ a {
   -webkit-user-drag: none;
 }
 
+.motion-layer {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  overflow: hidden;
+  background: var(--ink);
+  pointer-events: none;
+  contain: paint;
+}
+
+.motion-layer--dj {
+  clip-path: inset(8.7% 18% 67.5% 4%);
+}
+
+.motion-layer--logo {
+  z-index: 3;
+  clip-path: inset(0 0 88.5% 0);
+}
+
+.motion-layer--tagline {
+  z-index: 4;
+  clip-path: inset(11.2% 3% 84.6% 30%);
+}
+
+.motion-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 11377.08 / 32808.32;
+  user-select: none;
+  will-change: transform;
+  -webkit-user-drag: none;
+}
+
+.motion-layer--dj .motion-art {
+  transform: translate3d(var(--dj-x), var(--dj-y), 0) rotate(var(--dj-rotate));
+  transform-origin: 48% 20%;
+}
+
+.motion-layer--logo .motion-art {
+  transform: translate3d(var(--logo-x), var(--logo-y), 0) scale(var(--logo-scale));
+  transform-origin: 50% 6%;
+}
+
+.motion-layer--tagline .motion-art {
+  transform: translate3d(var(--tagline-x), var(--tagline-y), 0);
+}
+
+.telegram-title {
+  position: absolute;
+  z-index: 10;
+  top: 76.3%;
+  left: 7.25%;
+  color: var(--green);
+  font: 400 min(4.25vw, 18px) / 0.9 "Courier New", monospace;
+  letter-spacing: -0.08em;
+  pointer-events: none;
+}
+
 .hotspots {
   position: absolute;
+  z-index: 20;
   inset: 0;
 }
 
@@ -304,6 +376,10 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .motion-layer {
+    display: none;
+  }
+
   .hotspot.is-pressed::before,
   .hotspot.is-pressed::after {
     animation: none;
