@@ -68,6 +68,7 @@ a {
 .hotspot {
   position: absolute;
   display: block;
+  overflow: hidden;
   margin: 0;
   padding: 0;
   border: 0;
@@ -76,6 +77,42 @@ a {
   color: transparent;
   cursor: pointer;
   touch-action: manipulation;
+}
+
+.hotspot::before,
+.hotspot::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+}
+
+.hotspot::before {
+  border: 2px solid rgba(120, 190, 32, 0.9);
+  background: rgba(120, 190, 32, 0.12);
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(120, 190, 32, 0.35);
+  transform: scale(0.975);
+}
+
+.hotspot::after {
+  background: radial-gradient(
+    circle at var(--tap-x, 50%) var(--tap-y, 50%),
+    rgba(255, 255, 255, 0.34) 0,
+    rgba(120, 190, 32, 0.2) 13%,
+    transparent 38%
+  );
+  transform: scale(0.55);
+}
+
+.hotspot.is-pressed::before {
+  animation: touch-frame 360ms ease-out both;
+}
+
+.hotspot.is-pressed::after {
+  animation: touch-ripple 420ms ease-out both;
 }
 
 .hotspot--menu {
@@ -127,7 +164,36 @@ a {
 }
 
 .hotspot:not([aria-disabled="true"]):active {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@keyframes touch-frame {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  22% {
+    opacity: 1;
+    transform: scale(0.985);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes touch-ripple {
+  0% {
+    opacity: 0;
+    transform: scale(0.45);
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
 }
 
 .menu-dialog {
@@ -188,6 +254,18 @@ a {
   font: 700 14px/1 "Courier New", monospace;
   text-decoration: none;
   cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.menu-pdf-link:active,
+.menu-close:active {
+  transform: scale(0.9);
+  background: var(--green);
+  color: var(--black);
 }
 
 .menu-close {
@@ -226,14 +304,14 @@ a {
   font-weight: 800;
 }
 
-@media (min-width: 700px) {
-  body {
-    padding: 24px 0;
+@media (prefers-reduced-motion: reduce) {
+  .hotspot.is-pressed::before,
+  .hotspot.is-pressed::after {
+    animation: none;
   }
 
-  .landing {
-    border-right: 1px solid #292929;
-    border-left: 1px solid #292929;
-    box-shadow: 0 22px 80px rgba(0, 0, 0, 0.65);
+  .menu-pdf-link,
+  .menu-close {
+    transition: none;
   }
 }
