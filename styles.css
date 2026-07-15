@@ -120,17 +120,6 @@ a {
   transform: translate3d(var(--tagline-x), var(--tagline-y), 0);
 }
 
-.telegram-title {
-  position: absolute;
-  z-index: 10;
-  top: 76.3%;
-  left: 7.25%;
-  color: var(--green);
-  font: 400 min(4.25vw, 18px) / 0.9 "Courier New", monospace;
-  letter-spacing: -0.08em;
-  pointer-events: none;
-}
-
 .hotspots {
   position: absolute;
   z-index: 20;
