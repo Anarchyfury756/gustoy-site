@@ -56,7 +56,7 @@ a {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 11377.08 / 32808.32;
+  aspect-ratio: 11377.08 / 31908.74;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -81,45 +81,52 @@ a {
 }
 
 .hotspot--menu {
-  top: 32.339%;
-  left: 4.419%;
-  width: 91.165%;
-  height: 12.903%;
+  top: 30.417%;
+  left: 4.426%;
+  width: 91.163%;
+  height: 13.267%;
 }
 
 .hotspot--loyalty {
-  top: 46.209%;
-  left: 4.419%;
-  width: 91.165%;
-  height: 9.678%;
+  top: 44.679%;
+  left: 4.426%;
+  width: 91.163%;
+  height: 9.950%;
 }
 
 .hotspot--2gis {
-  top: 56.855%;
-  left: 4.419%;
-  width: 43.254%;
-  height: 15%;
+  top: 55.624%;
+  left: 4.426%;
+  width: 44.186%;
+  height: 15.423%;
 }
 
 .hotspot--yandex {
-  top: 56.855%;
-  left: 52.324%;
-  width: 43.254%;
-  height: 15%;
+  top: 55.624%;
+  left: 51.403%;
+  width: 44.186%;
+  height: 15.423%;
+}
+
+.hotspot--tips {
+  top: 72.042%;
+  left: 4.426%;
+  width: 91.163%;
+  height: 9.950%;
 }
 
 .hotspot--telegram {
-  top: 72.823%;
-  left: 4.419%;
-  width: 91.165%;
-  height: 9.678%;
+  top: 82.987%;
+  left: 4.426%;
+  width: 44.186%;
+  height: 15.423%;
 }
 
 .hotspot--survey {
-  top: 83.468%;
-  left: 52.324%;
-  width: 43.254%;
-  height: 15%;
+  top: 82.987%;
+  left: 51.403%;
+  width: 44.186%;
+  height: 15.423%;
 }
 
 .hotspot:focus-visible {
@@ -129,6 +136,89 @@ a {
 
 .hotspot:not([aria-disabled="true"]):active {
   background: rgba(120, 190, 32, 0.1);
+}
+
+.tips-dialog__close:focus-visible,
+.tips-dialog__tables button:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+}
+
+.tips-dialog {
+  width: min(calc(100% - 32px), 398px);
+  max-width: none;
+  margin: auto;
+  padding: 18px;
+  border: 5px solid var(--green);
+  border-radius: 0;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.tips-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.tips-dialog__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.tips-dialog__eyebrow {
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.tips-dialog h2 {
+  margin: 5px 0 18px;
+  color: var(--green);
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.tips-dialog__close {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  padding: 0 0 4px;
+  border: 1px solid #555;
+  border-radius: 0;
+  background: #171717;
+  color: var(--white);
+  font: 300 34px/1 "Courier New", monospace;
+}
+
+.tips-dialog__tables {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.tips-dialog__tables button {
+  aspect-ratio: 1;
+  border: 2px solid var(--green);
+  border-radius: 0;
+  background: transparent;
+  color: var(--green);
+  font: 700 19px/1 "Courier New", monospace;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tips-dialog__tables button:active {
+  background: var(--green);
+  color: var(--black);
+}
+
+.tips-dialog__note {
+  margin: 16px 0 0;
+  color: #b8b8b8;
+  font-size: 11px;
+  line-height: 1.45;
 }
 
 @keyframes page-enter {

@@ -6,21 +6,21 @@
     <meta name="theme-color" content="#1d1d1e" />
     <meta
       name="description"
-      content="ГУСТОЙ — меню, карта лояльности, G-бонусы, отзывы и Telegram-группа постоянников."
+      content="ГУСТОЙ — меню, карта лояльности, G-бонусы, отзывы, оплата счёта, чаевые и Telegram-группа."
     />
     <title>ГУСТОЙ</title>
-    <link rel="preload" as="image" type="image/svg+xml" href="assets/gustoy-home-2026.svg?v=design-3" />
-    <link rel="stylesheet" href="styles.css?v=subtle-1" />
+    <link rel="preload" as="image" type="image/svg+xml" href="assets/gustoy-home-2026.svg?v=design-4" />
+    <link rel="stylesheet" href="styles.css?v=layout-4" />
   </head>
   <body>
     <main class="landing" aria-labelledby="page-title">
       <h1 class="visually-hidden" id="page-title">ГУСТОЙ — место хороших ребят</h1>
       <img
         class="design"
-        src="assets/gustoy-home-2026.svg?v=design-3"
+        src="assets/gustoy-home-2026.svg?v=design-4"
         width="11377"
-        height="32808"
-        alt="ГУСТОЙ — меню, карта лояльности и задания с G-бонусами"
+        height="31909"
+        alt="ГУСТОЙ — меню, карта лояльности, отзывы, оплата счёта, чаевые, Telegram и анкета"
         decoding="async"
       />
 
@@ -56,6 +56,16 @@
           rel="noopener noreferrer"
           aria-label="Оставить отзыв на Яндексе"
         ></a>
+
+        <button
+          class="hotspot hotspot--tips"
+          id="tips-open"
+          type="button"
+          aria-haspopup="dialog"
+          aria-label="Оплатить счёт или оставить чаевые через Нетмонет"
+        >
+          <span class="visually-hidden" id="tips-card-caption">выберите номер стола</span>
+        </button>
 
         <a
           class="hotspot hotspot--telegram"
@@ -98,12 +108,35 @@
       </div>
     </dialog>
 
+    <dialog class="tips-dialog" id="tips-dialog" aria-labelledby="tips-dialog-title">
+      <div class="tips-dialog__header">
+        <div>
+          <span class="tips-dialog__eyebrow">ОПЛАТА И ЧАЕВЫЕ · НЕТМОНЕТ</span>
+          <h2 id="tips-dialog-title">ВЫБЕРИТЕ СТОЛ</h2>
+        </div>
+        <button class="tips-dialog__close" id="tips-close" type="button" aria-label="Закрыть">×</button>
+      </div>
+      <div class="tips-dialog__tables" aria-label="Номер стола">
+        <button type="button" data-table="1">01</button>
+        <button type="button" data-table="2">02</button>
+        <button type="button" data-table="3">03</button>
+        <button type="button" data-table="4">04</button>
+        <button type="button" data-table="5">05</button>
+        <button type="button" data-table="6">06</button>
+        <button type="button" data-table="7">07</button>
+        <button type="button" data-table="8">08</button>
+        <button type="button" data-table="9">09</button>
+        <button type="button" data-table="10">10</button>
+      </div>
+      <p class="tips-dialog__note">Оплата счёта и чаевые откроются на защищённой странице сервиса «Нетмонет».</p>
+    </dialog>
+
     <noscript>
       <p class="noscript-menu">
         <a href="assets/menu/gustoy-menu.pdf">Открыть меню в PDF</a>
       </p>
     </noscript>
 
-    <script src="script.js?v=static-1"></script>
+    <script src="script.js?v=layout-4"></script>
   </body>
 </html>
