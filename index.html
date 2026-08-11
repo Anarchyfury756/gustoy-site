@@ -3,47 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#171716" />
-    <meta name="description" content="Бонусная программа и быстрые сервисы заведения." />
-    <title>Бонусная программа</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#1d1d1e" />
+    <meta
+      name="description"
+      content="ГУСТОЙ — меню, карта лояльности, G-бонусы, отзывы, оплата счёта, чаевые и Telegram-группа."
+    />
+    <title>ГУСТОЙ</title>
+    <link rel="preload" as="image" type="image/png" href="assets/gustoy-home-2026-v5.png" />
+    <link rel="stylesheet" href="styles.css?v=layout-4" />
   </head>
   <body>
-    <main class="landing" aria-label="Бонусная программа">
-      <img class="design" src="nu-design.svg" width="11377" height="32808" alt="Бонусная программа: карта, отзывы, оплата и Telegram" />
+    <main class="landing" aria-labelledby="page-title">
+      <h1 class="visually-hidden" id="page-title">ГУСТОЙ — место хороших ребят</h1>
+      <img
+        class="design"
+        src="assets/gustoy-home-2026-v5.png"
+        width="11377"
+        height="31909"
+        alt="ГУСТОЙ — меню, карта лояльности, отзывы, оплата счёта, чаевые, Telegram и анкета"
+        decoding="async"
+      />
 
-      <nav class="hotspots" aria-label="Сервисы">
-        <a class="hotspot loyalty" href="https://xvkq3042.uds.app/c/join?ref=xvkq3042" target="_blank" rel="noopener noreferrer" aria-label="Оформить бонусную карту"></a>
-        <button class="hotspot payment" type="button" data-open-tables aria-label="Оплатить счёт или оставить чаевые"></button>
-        <a class="hotspot yandex" href="https://yandex.ru/profile/165048607455?intent=reviews" target="_blank" rel="noopener noreferrer" aria-label="Оставить отзыв в Яндексе"></a>
-        <a class="hotspot gis" href="https://2gis.ru/reviews/70000001027295493/addReview?utm_source=lk" target="_blank" rel="noopener noreferrer" aria-label="Оставить отзыв в 2ГИС"></a>
-        <a class="hotspot telegram" href="https://t.me/+7MPlepUNmtYxYmI6" target="_blank" rel="noopener noreferrer" aria-label="Открыть группу в Telegram"></a>
-        <a class="hotspot form" href="https://docs.google.com/forms/d/e/1FAIpQLSeiTU3ouHFEyhRMCRh_cpVpD_Dn5laaLdtFzP8Nx8uni8c1Rw/viewform?pli=1" target="_blank" rel="noopener noreferrer" aria-label="Заполнить анкету"></a>
+      <nav class="hotspots" aria-label="Основные действия">
+        <button
+          class="hotspot hotspot--menu"
+          id="menu-open"
+          type="button"
+          aria-haspopup="dialog"
+          aria-label="Открыть меню"
+        ></button>
+
+        <a
+          class="hotspot hotspot--loyalty"
+          href="https://xvkq3042.uds.app/c/join?ref=xvkq3042"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Зарегистрировать карту лояльности UDS"
+        ></a>
+
+        <a
+          class="hotspot hotspot--2gis"
+          href="https://2gis.ru/reviews/70000001027295493/addReview?utm_source=lk"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Оставить отзыв в 2ГИС"
+        ></a>
+
+        <a
+          class="hotspot hotspot--yandex"
+          href="https://yandex.ru/profile/165048607455?intent=reviews"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Оставить отзыв на Яндексе"
+        ></a>
+
+        <button
+          class="hotspot hotspot--tips"
+          id="tips-open"
+          type="button"
+          aria-haspopup="dialog"
+          aria-label="Оплатить счёт или оставить чаевые через Нетмонет"
+        >
+          <span class="visually-hidden" id="tips-card-caption">выберите номер стола</span>
+        </button>
+
+        <a
+          class="hotspot hotspot--telegram"
+          href="https://t.me/+7MPlepUNmtYxYmI6"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Открыть Telegram-группу постоянников"
+        ></a>
+
+        <a
+          class="hotspot hotspot--survey"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeiTU3ouHFEyhRMCRh_cpVpD_Dn5laaLdtFzP8Nx8uni8c1Rw/viewform?pli=1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Заполнить анкету"
+        ></a>
       </nav>
     </main>
 
-    <dialog id="table-dialog" class="dialog" aria-labelledby="table-title">
-      <section class="dialog__panel">
-        <header class="dialog__header">
-          <div><p>ОПЛАТА И ЧАЕВЫЕ</p><h1 id="table-title">ВЫБЕРИТЕ СТОЛ</h1></div>
-          <button class="close" type="button" data-close aria-label="Закрыть">×</button>
-        </header>
-        <div class="tables" aria-label="Номера столов">
-          <button type="button" data-table="1">01</button><button type="button" data-table="2">02</button><button type="button" data-table="3">03</button><button type="button" data-table="4">04</button>
-          <button type="button" data-table="5">05</button><button type="button" data-table="6">06</button><button type="button" data-table="7">07</button><button type="button" data-table="8">08</button>
-          <button type="button" data-table="9">09</button><button type="button" data-table="10">10</button><button type="button" data-table="11">11</button><button type="button" data-table="12">12</button>
+    <dialog class="menu-dialog" id="menu-dialog" aria-labelledby="menu-title">
+      <div class="menu-toolbar">
+        <h2 id="menu-title">МЕНЮ</h2>
+        <div class="menu-toolbar__actions">
+          <a
+            class="menu-pdf-link"
+            href="assets/menu/gustoy-menu.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >PDF</a>
+          <button class="menu-close" id="menu-close" type="button" aria-label="Закрыть меню">×</button>
         </div>
-      </section>
+      </div>
+
+      <div class="menu-pages">
+        <img src="assets/menu/page-1.png" alt="Меню ГУСТОЙ, страница 1" />
+        <img loading="lazy" src="assets/menu/page-2.png" alt="Меню ГУСТОЙ, страница 2" />
+        <img loading="lazy" src="assets/menu/page-3.png" alt="Меню ГУСТОЙ, страница 3" />
+        <img loading="lazy" src="assets/menu/page-4.png" alt="Меню ГУСТОЙ, страница 4" />
+        <img loading="lazy" src="assets/menu/page-5.png" alt="Меню ГУСТОЙ, страница 5" />
+      </div>
     </dialog>
 
-    <dialog id="qr-dialog" class="dialog" aria-labelledby="qr-title">
-      <section class="dialog__panel qr-panel">
-        <header class="dialog__header"><div><p>ОПЛАТА И ЧАЕВЫЕ</p><h1 id="qr-title">СТОЛ <span id="table-number"></span></h1></div><button class="close" type="button" data-close aria-label="Закрыть">×</button></header>
-        <img id="qr-image" class="qr-image" src="" alt="QR-код для оплаты" />
-        <p class="qr-note">Наведите камеру на QR‑код, чтобы перейти к оплате.</p>
-        <button class="back" type="button" id="back-to-tables">Выбрать другой стол</button>
-      </section>
+    <dialog class="tips-dialog" id="tips-dialog" aria-labelledby="tips-dialog-title">
+      <div class="tips-dialog__header">
+        <div>
+          <span class="tips-dialog__eyebrow">ОПЛАТА И ЧАЕВЫЕ · НЕТМОНЕТ</span>
+          <h2 id="tips-dialog-title">ВЫБЕРИТЕ СТОЛ</h2>
+        </div>
+        <button class="tips-dialog__close" id="tips-close" type="button" aria-label="Закрыть">×</button>
+      </div>
+      <div class="tips-dialog__tables" aria-label="Номер стола">
+        <button type="button" data-table="1">01</button>
+        <button type="button" data-table="2">02</button>
+        <button type="button" data-table="3">03</button>
+        <button type="button" data-table="4">04</button>
+        <button type="button" data-table="5">05</button>
+        <button type="button" data-table="6">06</button>
+        <button type="button" data-table="7">07</button>
+        <button type="button" data-table="8">08</button>
+        <button type="button" data-table="9">09</button>
+        <button type="button" data-table="10">10</button>
+      </div>
+      <p class="tips-dialog__note">Оплата счёта и чаевые откроются на защищённой странице сервиса «Нетмонет».</p>
     </dialog>
-    <script src="script.js"></script>
+
+    <noscript>
+      <p class="noscript-menu">
+        <a href="assets/menu/gustoy-menu.pdf">Открыть меню в PDF</a>
+      </p>
+    </noscript>
+
+    <script src="script.js?v=layout-4"></script>
   </body>
 </html>
